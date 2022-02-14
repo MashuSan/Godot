@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Quizz/QuizzQuestion.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.231373, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelQuestion" type="Panel" parent="."]
+margin_left = 201.505
+margin_top = 27.9439
+margin_right = 843.505
+margin_bottom = 113.944
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question" type="Label" parent="PanelQuestion"]
+anchor_left = 0.512
+anchor_top = 0.5
+anchor_right = 0.512
+anchor_bottom = 0.5
+margin_left = -177.153
+margin_top = -18.2245
+margin_right = 31.847
+margin_bottom = -1.2245
+rect_scale = Vector2( 1.76, 2.12 )
+text = "WHATS YOUR QUESTION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelAnswers" type="Panel" parent="."]
+margin_left = 123.485
+margin_top = 280.168
+margin_right = 919.485
+margin_bottom = 547.168
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer1" type="Button" parent="PanelAnswers"]
+margin_left = 60.0
+margin_top = 30.0
+margin_right = 346.0
+margin_bottom = 103.0
+text = "Answer 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer2" type="Button" parent="PanelAnswers"]
+margin_left = 459.112
+margin_top = 30.0
+margin_right = 716.112
+margin_bottom = 105.0
+rect_pivot_offset = Vector2( -269.949, -146.871 )
+text = "Answer 2"
+
+[node name="Answer3" type="Button" parent="PanelAnswers"]
+margin_left = 67.0
+margin_top = 140.0
+margin_right = 342.0
+margin_bottom = 215.0
+text = "Answer 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer4" type="Button" parent="PanelAnswers"]
+margin_left = 464.0
+margin_top = 137.0
+margin_right = 717.0
+margin_bottom = 213.0
+text = "Answer 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PanelAnswers/Answer1" to="." method="_on_Answer1_pressed"]
+[connection signal="pressed" from="PanelAnswers/Answer2" to="." method="_on_Answer2_pressed"]
+[connection signal="pressed" from="PanelAnswers/Answer3" to="." method="_on_Answer3_pressed"]
+[connection signal="pressed" from="PanelAnswers/Answer4" to="." method="_on_Answer4_pressed"]

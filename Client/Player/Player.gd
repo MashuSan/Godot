@@ -4,6 +4,7 @@ var _player_id
 var _player_name
 var _game_id
 var _is_host
+var _points = 0
 
 func set_player_name(player_name):
 	_player_name = player_name
@@ -31,3 +32,9 @@ func get_game_id():
 
 func get_parsable_player():
 	return [_player_name, _player_id, _game_id, _is_host]
+
+func adjust_points(p):
+	_points += p
+
+func get_points():
+	return _points

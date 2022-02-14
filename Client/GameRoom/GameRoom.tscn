@@ -22,10 +22,10 @@ __meta__ = {
 }
 
 [node name="Start_button" type="Button" parent="."]
-margin_left = 74.9865
-margin_top = 169.97
-margin_right = 267.986
-margin_bottom = 299.97
+margin_left = 75.0
+margin_top = 168.0
+margin_right = 268.0
+margin_bottom = 261.0
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -43,11 +43,24 @@ __meta__ = {
 }
 
 [node name="Leave_button" type="Button" parent="."]
-margin_left = 77.0
-margin_top = 340.0
-margin_right = 273.0
-margin_bottom = 465.0
+margin_left = 76.0
+margin_top = 277.0
+margin_right = 272.0
+margin_bottom = 369.0
+rect_pivot_offset = Vector2( 109.965, 47.728 )
 text = "Leave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChooseSet" type="Button" parent="."]
+visible = false
+margin_left = 78.583
+margin_top = 395.18
+margin_right = 274.583
+margin_bottom = 487.18
+rect_pivot_offset = Vector2( 109.965, 47.728 )
+text = "Question set"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,8 +72,8 @@ anchor_right = 0.939583
 anchor_bottom = 0.822222
 margin_left = -3.99939
 margin_top = 1.99963
-margin_right = -3.99939
-margin_bottom = 2.00024
+margin_right = -3.99933
+margin_bottom = 2.00031
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -84,6 +97,35 @@ __meta__ = {
 margin_right = 640.0
 size_flags_horizontal = 3
 
+[node name="GameSet" type="Control" parent="."]
+visible = false
+anchor_right = 0.997
+anchor_bottom = 0.998
+margin_right = 0.0719604
+margin_bottom = 0.200012
+
+[node name="ColorRect" type="ColorRect" parent="GameSet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.282353, 0.0235294, 0.0235294, 0.823529 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GameSet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 983.0
+margin_bottom = 560.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameModesContainer" type="VBoxContainer" parent="GameSet/ScrollContainer"]
+margin_right = 2004.0
+size_flags_horizontal = 3
+
 [connection signal="tree_entered" from="." to="." method="_on_Game_room_tree_entered"]
 [connection signal="pressed" from="Start_button" to="." method="_on_Start_button_pressed"]
 [connection signal="pressed" from="Leave_button" to="." method="_on_Leave_button_pressed"]
+[connection signal="pressed" from="ChooseSet" to="." method="_on_ChooseSet_pressed"]

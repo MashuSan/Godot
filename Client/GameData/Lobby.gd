@@ -4,7 +4,6 @@ const MIN_PLAYERS = 2
 const MAX_PLAYERS = 24
 const MIN_GAME_NAME_LENGTH = 1
 const MAX_GAME_NAME_LENGTH = 20
-const GAME_MODES = ["Quizz", "Image - word pairing", "Code puzzle"]
 
 func _on_Refresh_button_pressed():
 	refresh_game_list()

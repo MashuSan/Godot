@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Quizz/Quizz.gd" type="Script" id=1]
+
+[node name="Node" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.6, 14.92 )
+color = Color( 0.0470588, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Introduction" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WelcomeTimer" type="Timer" parent="Introduction"]
+
+[node name="Welcome" type="Label" parent="Introduction"]
+margin_left = 336.076
+margin_top = 19.0273
+margin_right = 939.076
+margin_bottom = 135.027
+rect_scale = Vector2( 1.73072, 2.34102 )
+text = "Welcome to Quizz game mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ready" type="Label" parent="Introduction"]
+margin_left = 400.426
+margin_top = 77.2985
+margin_right = 633.426
+margin_bottom = 91.2985
+text = "The questions will start shortly"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionTimer" type="Timer" parent="."]
+
+[node name="Game" type="Control" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 595.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemainingTime" type="Label" parent="Game"]
+margin_left = 21.7092
+margin_top = 20.7653
+margin_right = 130.709
+margin_bottom = 52.7653
+rect_scale = Vector2( 1.14899, 1.72673 )
+text = "Remaining time: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextQuestion" type="Button" parent="Game"]
+visible = false
+margin_left = 445.477
+margin_top = 492.146
+margin_right = 550.477
+margin_bottom = 550.146
+text = "Next Question"
+
+[node name="Score" type="Label" parent="Game"]
+margin_left = 876.812
+margin_top = 19.799
+margin_right = 1002.81
+margin_bottom = 75.799
+rect_scale = Vector2( 1.6, 1.52 )
+text = "Score :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightAnswer" type="Label" parent="Game"]
+margin_left = 298.399
+margin_top = 285.671
+margin_right = 439.399
+margin_bottom = 299.671
+rect_scale = Vector2( 1.95691, 2.64 )
+text = "The right answer was :"
+
+[connection signal="timeout" from="Introduction/WelcomeTimer" to="." method="_on_WelcomeTimer_timeout"]
+[connection signal="timeout" from="QuestionTimer" to="." method="_on_QuestionTimer_timeout"]
+[connection signal="pressed" from="Game/NextQuestion" to="." method="_on_NextQuestion_pressed"]
