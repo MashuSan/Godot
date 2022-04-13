@@ -22,43 +22,53 @@ __meta__ = {
 }
 
 [node name="Start_button" type="Button" parent="."]
-margin_left = 75.0
-margin_top = 168.0
-margin_right = 268.0
-margin_bottom = 261.0
+margin_left = 76.4984
+margin_top = 114.061
+margin_right = 269.498
+margin_bottom = 207.061
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Ready_button" type="Button" parent="."]
-visible = false
-margin_left = 185.965
-margin_top = 324.728
-margin_right = 522.965
-margin_bottom = 502.728
+margin_left = 595.525
+margin_top = 521.502
+margin_right = 717.525
+margin_bottom = 574.502
 text = "Ready"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Leave_button" type="Button" parent="."]
-margin_left = 76.0
-margin_top = 277.0
-margin_right = 272.0
-margin_bottom = 369.0
+margin_left = 74.5017
+margin_top = 229.054
+margin_right = 270.502
+margin_bottom = 321.054
 rect_pivot_offset = Vector2( 109.965, 47.728 )
 text = "Leave"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CreateQuestion_button" type="Button" parent="."]
+visible = false
+margin_left = 79.5797
+margin_top = 475.343
+margin_right = 272.58
+margin_bottom = 568.343
+text = "Create Questions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ChooseSet" type="Button" parent="."]
 visible = false
-margin_left = 78.583
-margin_top = 395.18
-margin_right = 274.583
-margin_bottom = 487.18
+margin_left = 75.5864
+margin_top = 356.224
+margin_right = 271.586
+margin_bottom = 448.224
 rect_pivot_offset = Vector2( 109.965, 47.728 )
 text = "Question set"
 __meta__ = {
@@ -127,5 +137,7 @@ size_flags_horizontal = 3
 
 [connection signal="tree_entered" from="." to="." method="_on_Game_room_tree_entered"]
 [connection signal="pressed" from="Start_button" to="." method="_on_Start_button_pressed"]
+[connection signal="pressed" from="Ready_button" to="." method="_on_Ready_button_pressed"]
 [connection signal="pressed" from="Leave_button" to="." method="_on_Leave_button_pressed"]
+[connection signal="pressed" from="CreateQuestion_button" to="." method="_on_CreateQuestion_button_pressed"]
 [connection signal="pressed" from="ChooseSet" to="." method="_on_ChooseSet_pressed"]

@@ -15,7 +15,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
-stretch_mode = 2
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -160,6 +160,35 @@ margin_right = 533.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="Lobby_game_creation_panel"]
+anchor_left = -0.000103034
+anchor_top = 0.238824
+anchor_right = -0.000103034
+anchor_bottom = 0.238824
+margin_left = 56.0667
+margin_top = -23.8439
+margin_right = 590.067
+margin_bottom = 0.156128
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Game_mode_label" type="Label" parent="Lobby_game_creation_panel/HBoxContainer3"]
+margin_right = 78.0
+margin_bottom = 24.0
+size_flags_vertical = 3
+text = "Gamename:"
+valign = 1
+
+[node name="Game_modes" type="OptionButton" parent="Lobby_game_creation_panel/HBoxContainer3"]
+margin_left = 82.0
+margin_right = 534.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Quizz"
+items = [ "Quizz", null, false, 0, null, "Word Pairing", null, false, 1, null, "Code puzzle", null, false, 2, null, "Word Guess", null, false, 3, null ]
+selected = 0
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Lobby_game_creation_panel"]
 anchor_left = 0.0881384
 anchor_top = 0.278207
@@ -211,35 +240,6 @@ text = "Cancel"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Lobby_game_creation_panel"]
-anchor_left = -0.000103034
-anchor_top = 0.238824
-anchor_right = -0.000103034
-anchor_bottom = 0.238824
-margin_left = 56.0667
-margin_top = -23.8439
-margin_right = 590.067
-margin_bottom = 0.156128
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Game_mode_label" type="Label" parent="Lobby_game_creation_panel/HBoxContainer3"]
-margin_right = 78.0
-margin_bottom = 24.0
-size_flags_vertical = 3
-text = "Gamename:"
-valign = 1
-
-[node name="Game_modes" type="OptionButton" parent="Lobby_game_creation_panel/HBoxContainer3"]
-margin_left = 82.0
-margin_right = 534.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-text = "Quizz"
-items = [ "Quizz", null, false, 0, null, "Image - Text pairing", null, false, 1, null, "Code puzzle", null, false, 2, null ]
-selected = 0
 
 [connection signal="tree_entered" from="." to="." method="_on_Lobby_controller_tree_entered"]
 [connection signal="pressed" from="Lobby/Lobby_buttons/Create_game_button" to="." method="_on_Create_game_button_pressed"]

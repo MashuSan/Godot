@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/WordGuess/WordGuessPlayer.gd" type="Script" id=1]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 688.0
+margin_bottom = 58.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+margin_top = 22.0
+margin_right = 81.0
+margin_bottom = 36.0
+text = "Player Name"
+valign = 1
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 85.0
+margin_right = 109.0
+margin_bottom = 58.0
+disabled = true
+
+[node name="Score" type="Button" parent="."]
+margin_left = 113.0
+margin_right = 133.0
+margin_bottom = 58.0
+toggle_mode = true
+text = "0"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

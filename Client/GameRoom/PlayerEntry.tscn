@@ -11,9 +11,18 @@ __meta__ = {
 }
 
 [node name="Player_name_label" type="Label" parent="."]
-margin_right = 800.0
+margin_right = 738.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Player 1"
 valign = 1
+
+[node name="Team" type="LineEdit" parent="."]
+margin_left = 742.0
+margin_right = 800.0
+margin_bottom = 40.0
+align = 1
+placeholder_text = "n/A"
+
+[connection signal="text_changed" from="Team" to="." method="_on_Button_text_changed"]

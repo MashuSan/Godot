@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game/Quizz/QuizzQuestion.gd" type="Script" id=1]
+[ext_resource path="res://Images/quizz_background.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.945098, 0.933333, 0.0588235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.945098, 0.933333, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.945098, 0.933333, 0.0196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.945098, 0.933333, 0.0392157, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -10,6 +23,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RemainingTimeTimer" type="Timer" parent="."]
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,77 +33,101 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelQuestion" type="Panel" parent="."]
-margin_left = 201.505
-margin_top = 27.9439
-margin_right = 843.505
-margin_bottom = 113.944
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1025.0
+margin_bottom = 599.0
+texture = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PanelQuestion" type="Control" parent="."]
+margin_left = 111.0
+margin_top = 248.0
+margin_right = 933.0
+margin_bottom = 349.0
 
 [node name="Question" type="Label" parent="PanelQuestion"]
 anchor_left = 0.512
 anchor_top = 0.5
 anchor_right = 0.512
 anchor_bottom = 0.5
-margin_left = -177.153
-margin_top = -18.2245
-margin_right = 31.847
-margin_bottom = -1.2245
+margin_left = -323.704
+margin_top = -36.0
+margin_right = 37.296
+margin_bottom = -1.00005
 rect_scale = Vector2( 1.76, 2.12 )
 text = "WHATS YOUR QUESTION"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelAnswers" type="Panel" parent="."]
+[node name="PanelAnswers" type="Control" parent="."]
 margin_left = 123.485
-margin_top = 280.168
+margin_top = 262.529
 margin_right = 919.485
-margin_bottom = 547.168
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 529.529
 
 [node name="Answer1" type="Button" parent="PanelAnswers"]
-margin_left = 60.0
-margin_top = 30.0
-margin_right = 346.0
-margin_bottom = 103.0
+margin_left = 5.0
+margin_top = 135.0
+margin_right = 360.0
+margin_bottom = 184.0
+custom_styles/focus = SubResource( 1 )
 text = "Answer 1"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Answer2" type="Button" parent="PanelAnswers"]
-margin_left = 459.112
-margin_top = 30.0
-margin_right = 716.112
-margin_bottom = 105.0
+margin_left = 483.0
+margin_top = 133.0
+margin_right = 833.0
+margin_bottom = 184.0
 rect_pivot_offset = Vector2( -269.949, -146.871 )
+custom_styles/focus = SubResource( 2 )
 text = "Answer 2"
+flat = true
 
 [node name="Answer3" type="Button" parent="PanelAnswers"]
-margin_left = 67.0
-margin_top = 140.0
-margin_right = 342.0
-margin_bottom = 215.0
+margin_left = 1.0
+margin_top = 228.0
+margin_right = 363.0
+margin_bottom = 278.0
+custom_styles/focus = SubResource( 3 )
 text = "Answer 3"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Answer4" type="Button" parent="PanelAnswers"]
-margin_left = 464.0
-margin_top = 137.0
-margin_right = 717.0
-margin_bottom = 213.0
+margin_left = 480.0
+margin_top = 229.0
+margin_right = 830.0
+margin_bottom = 278.0
+custom_styles/focus = SubResource( 4 )
 text = "Answer 4"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RemainingTimeLabel" type="Label" parent="."]
+margin_left = 26.4583
+margin_top = 54.1766
+margin_right = 135.458
+margin_bottom = 116.177
+text = "Remaining time: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="RemainingTimeTimer" to="." method="_on_RemainingTimeTimer_timeout"]
 [connection signal="pressed" from="PanelAnswers/Answer1" to="." method="_on_Answer1_pressed"]
 [connection signal="pressed" from="PanelAnswers/Answer2" to="." method="_on_Answer2_pressed"]
 [connection signal="pressed" from="PanelAnswers/Answer3" to="." method="_on_Answer3_pressed"]

@@ -1,0 +1,144 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/CodePuzzle/CodePuzzleQuestionMaker/CodePuzzleQuestionMaker.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.25989
+margin_right = 1.25989
+color = Color( 0.231373, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelQuestion" type="Panel" parent="."]
+margin_left = 201.505
+margin_top = 27.9439
+margin_right = 843.505
+margin_bottom = 113.944
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Questions" type="Label" parent="PanelQuestion"]
+margin_left = 174.525
+margin_top = 34.8318
+margin_right = 481.525
+margin_bottom = 48.8318
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "INSERT YOUR IMAGE AND POSITION IN PUZZLE:"
+
+[node name="PanelAnswers" type="Panel" parent="."]
+margin_left = 122.225
+margin_top = 140.317
+margin_right = 918.225
+margin_bottom = 407.317
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="PanelAnswers"]
+margin_left = 145.0
+margin_top = 20.0
+margin_right = 665.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 520, 220 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PanelAnswers"]
+margin_left = 39.0575
+margin_top = 95.754
+margin_right = 127.058
+margin_bottom = 153.754
+rect_pivot_offset = Vector2( 34.9425, 29 )
+text = "ADD IMAGE"
+
+[node name="Button2" type="Button" parent="PanelAnswers"]
+margin_left = 674.058
+margin_top = 102.054
+margin_right = 778.058
+margin_bottom = 160.054
+rect_pivot_offset = Vector2( 34.9425, 29 )
+text = "DELETE IMAGE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="PanelAnswers"]
+margin_right = 747.0
+margin_bottom = 446.0
+window_title = "Otevřít soubor(y)"
+mode = 1
+access = 2
+filters = PoolStringArray( "*.png" )
+current_dir = "/Users/Atgod/Documents/Bachelors - Client"
+current_path = "/Users/Atgod/Documents/Bachelors - Client/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddQuestionButton" type="Button" parent="."]
+margin_left = 434.673
+margin_top = 467.43
+margin_right = 616.673
+margin_bottom = 531.43
+rect_pivot_offset = Vector2( -916.465, -271.94 )
+text = "ADD QUESTION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddSetText" type="LineEdit" parent="."]
+margin_left = 825.169
+margin_top = 449.802
+margin_right = 921.169
+margin_bottom = 492.802
+rect_pivot_offset = Vector2( 143, 36.5 )
+text = "Set Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddSetButton" type="Button" parent="."]
+margin_left = 807.137
+margin_top = 507.921
+margin_right = 939.137
+margin_bottom = 565.921
+text = "ADD SET"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 20.9763
+margin_top = 14.9831
+margin_right = 101.976
+margin_bottom = 71.9831
+text = "EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PanelAnswers/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PanelAnswers/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="file_selected" from="PanelAnswers/FileDialog" to="." method="_on_FileDialog_files_selected"]
+[connection signal="files_selected" from="PanelAnswers/FileDialog" to="." method="_on_FileDialog_files_selected"]
+[connection signal="pressed" from="AddQuestionButton" to="." method="_on_AddQuestionButton_pressed"]
+[connection signal="pressed" from="AddSetButton" to="." method="_on_AddSetButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

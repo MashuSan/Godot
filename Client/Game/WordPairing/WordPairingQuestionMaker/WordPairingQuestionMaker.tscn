@@ -1,0 +1,238 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/WordPairing/WordPairingQuestionMaker/WordPairingQuestionMaker.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.231373, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelAnswersLeft" type="Panel" parent="."]
+margin_left = 118.462
+margin_top = 16.9319
+margin_right = 914.462
+margin_bottom = 283.932
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer1" type="LineEdit" parent="PanelAnswersLeft"]
+margin_left = 69.128
+margin_top = 38.4853
+margin_right = 355.128
+margin_bottom = 111.485
+rect_pivot_offset = Vector2( 143, 36.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer2" type="LineEdit" parent="PanelAnswersLeft"]
+margin_left = 457.852
+margin_top = 37.5595
+margin_right = 714.852
+margin_bottom = 112.56
+rect_pivot_offset = Vector2( -269.949, -146.871 )
+
+[node name="Answer3" type="LineEdit" parent="PanelAnswersLeft"]
+margin_left = 67.0
+margin_top = 140.0
+margin_right = 357.0
+margin_bottom = 215.0
+
+[node name="Answer4" type="LineEdit" parent="PanelAnswersLeft"]
+margin_left = 464.0
+margin_top = 137.0
+margin_right = 717.0
+margin_bottom = 213.0
+
+[node name="Answers" type="Label" parent="PanelAnswersLeft"]
+margin_left = 333.047
+margin_top = 8.48528
+margin_right = 493.047
+margin_bottom = 22.4853
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "INSERT YOUR LEFT PAIRS:"
+
+[node name="Answers5" type="Label" parent="PanelAnswersLeft"]
+margin_left = 422.704
+margin_top = 60.5511
+margin_right = 438.704
+margin_bottom = 89.5511
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answers6" type="Label" parent="PanelAnswersLeft"]
+margin_left = 423.742
+margin_top = 162.421
+margin_right = 439.742
+margin_bottom = 191.421
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "4:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answers4" type="Label" parent="PanelAnswersLeft"]
+margin_left = 27.5135
+margin_top = 168.168
+margin_right = 43.5135
+margin_bottom = 197.168
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "3:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answers3" type="Label" parent="PanelAnswersLeft"]
+margin_left = 28.5946
+margin_top = 64.1784
+margin_right = 44.5946
+margin_bottom = 93.1784
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "1:"
+
+[node name="PanelAnswersRight" type="Panel" parent="."]
+margin_left = 118.558
+margin_top = 305.057
+margin_right = 914.558
+margin_bottom = 572.057
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer1" type="LineEdit" parent="PanelAnswersRight"]
+margin_left = 69.128
+margin_top = 38.4853
+margin_right = 355.128
+margin_bottom = 111.485
+rect_pivot_offset = Vector2( 143, 36.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer2" type="LineEdit" parent="PanelAnswersRight"]
+margin_left = 457.852
+margin_top = 37.5595
+margin_right = 714.852
+margin_bottom = 112.56
+rect_pivot_offset = Vector2( -269.949, -146.871 )
+
+[node name="Answer3" type="LineEdit" parent="PanelAnswersRight"]
+margin_left = 67.0
+margin_top = 140.0
+margin_right = 357.0
+margin_bottom = 215.0
+
+[node name="Answer4" type="LineEdit" parent="PanelAnswersRight"]
+margin_left = 464.0
+margin_top = 137.0
+margin_right = 717.0
+margin_bottom = 213.0
+
+[node name="Answers" type="Label" parent="PanelAnswersRight"]
+margin_left = 333.047
+margin_top = 8.48528
+margin_right = 493.047
+margin_bottom = 22.4853
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "INSERT YOUR RIGHT PAIRS:"
+
+[node name="Answers5" type="Label" parent="PanelAnswersRight"]
+margin_left = 422.704
+margin_top = 60.5511
+margin_right = 438.704
+margin_bottom = 89.5511
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answers6" type="Label" parent="PanelAnswersRight"]
+margin_left = 423.742
+margin_top = 162.421
+margin_right = 439.742
+margin_bottom = 191.421
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "4:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answers4" type="Label" parent="PanelAnswersRight"]
+margin_left = 27.5135
+margin_top = 168.168
+margin_right = 43.5135
+margin_bottom = 197.168
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "3:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answers3" type="Label" parent="PanelAnswersRight"]
+margin_left = 28.5946
+margin_top = 64.1784
+margin_right = 44.5946
+margin_bottom = 93.1784
+rect_pivot_offset = Vector2( -364.831, 124.149 )
+text = "1:"
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 20.9763
+margin_top = 14.9831
+margin_right = 101.976
+margin_bottom = 71.9831
+text = "EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddQuestionButton" type="Button" parent="."]
+margin_left = 442.165
+margin_top = 530.359
+margin_right = 624.165
+margin_bottom = 594.359
+rect_pivot_offset = Vector2( -916.465, -271.94 )
+text = "ADD QUESTION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddSetText" type="LineEdit" parent="."]
+margin_left = 882.105
+margin_top = 475.273
+margin_right = 978.105
+margin_bottom = 518.273
+rect_pivot_offset = Vector2( 143, 36.5 )
+text = "Set Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddSetButton" type="Button" parent="."]
+margin_left = 865.571
+margin_top = 530.396
+margin_right = 997.571
+margin_bottom = 588.396
+text = "ADD SET"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="AddQuestionButton" to="." method="_on_AddQuestionButton_pressed"]
+[connection signal="pressed" from="AddSetButton" to="." method="_on_AddSetButton_pressed"]

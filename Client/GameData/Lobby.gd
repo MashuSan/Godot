@@ -43,6 +43,11 @@ func _on_Exit_button_pressed():
 	get_tree().change_scene("res://Menu/Menu.tscn")
 
 func _on_Lobby_controller_tree_entered():
+	if Player.is_host() || Player.is_admin():
+		$Lobby/Lobby_buttons/Create_game_button.visible = true
+	else:
+		$Lobby/Lobby_buttons/Create_game_button.visible = false
+
 	refresh_game_list()
 
 func _on_Game_name_line_edit_text_changed(new_text):

@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game/WordPairing/WordPairingGame.gd" type="Script" id=1]
+[ext_resource path="res://Images/background-6795625_960_720.jpg" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0352941, 0.0352941, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -15,6 +28,269 @@ margin_right = 1023.0
 margin_bottom = 597.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.584314, 0.560784, 0.560784, 1 )
+margin_right = 1021.0
+margin_bottom = 640.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftSide" type="Control" parent="."]
+margin_right = 1020.0
+margin_bottom = 596.0
+rect_pivot_offset = Vector2( -523.711, -138.837 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftLabel1" type="Label" parent="LeftSide"]
+margin_left = 3.0
+margin_top = 81.0
+margin_right = 187.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox 0" type="CheckBox" parent="LeftSide/LeftLabel1"]
+margin_left = 200.773
+margin_top = 39.7052
+margin_right = 224.773
+margin_bottom = 63.7052
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftLabel2" type="Label" parent="LeftSide"]
+margin_left = 3.74915
+margin_top = 189.251
+margin_right = 189.749
+margin_bottom = 291.251
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox 1" type="CheckBox" parent="LeftSide/LeftLabel2"]
+margin_left = 200.773
+margin_top = 39.7052
+margin_right = 224.773
+margin_bottom = 63.7052
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftLabel3" type="Label" parent="LeftSide"]
+margin_left = 3.0
+margin_top = 293.251
+margin_right = 189.0
+margin_bottom = 406.251
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox 2" type="CheckBox" parent="LeftSide/LeftLabel3"]
+margin_left = 203.021
+margin_top = 44.9493
+margin_right = 227.021
+margin_bottom = 68.9493
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftLabel4" type="Label" parent="LeftSide"]
+margin_left = 3.0
+margin_top = 414.0
+margin_right = 189.0
+margin_bottom = 527.0
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox 3" type="CheckBox" parent="LeftSide/LeftLabel4"]
+margin_left = 203.77
+margin_top = 47.1967
+margin_right = 227.77
+margin_bottom = 71.1967
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightSide" type="Control" parent="."]
+margin_left = 698.211
+margin_top = 4.49493
+margin_right = 1021.21
+margin_bottom = 598.495
+rect_pivot_offset = Vector2( -523.711, -138.837 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightLabel1" type="Label" parent="RightSide"]
+margin_left = 100.0
+margin_top = 80.0
+margin_right = 324.0
+margin_bottom = 182.0
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+
+[node name="CheckBox 0" type="CheckBox" parent="RightSide/RightLabel1"]
+margin_left = -66.2115
+margin_top = 38.6457
+margin_right = -42.2115
+margin_bottom = 62.6457
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightLabel2" type="Label" parent="RightSide"]
+margin_left = 100.0
+margin_top = 189.0
+margin_right = 323.0
+margin_bottom = 287.0
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox 1" type="CheckBox" parent="RightSide/RightLabel2"]
+margin_left = -66.2115
+margin_top = 38.6457
+margin_right = -42.2115
+margin_bottom = 62.6457
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightLabel3" type="Label" parent="RightSide"]
+margin_left = 100.0
+margin_top = 294.0
+margin_right = 323.0
+margin_bottom = 395.0
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox 2" type="CheckBox" parent="RightSide/RightLabel3"]
+margin_left = -66.2115
+margin_top = 38.6457
+margin_right = -42.2115
+margin_bottom = 62.6457
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightLabel4" type="Label" parent="RightSide"]
+margin_left = 100.0
+margin_top = 406.0
+margin_right = 323.0
+margin_bottom = 519.0
+rect_pivot_offset = Vector2( -152.131, -131.345 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox 3" type="CheckBox" parent="RightSide/RightLabel4"]
+margin_left = -66.2115
+margin_top = 38.6457
+margin_right = -42.2115
+margin_bottom = 62.6457
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubmitButton" type="Button" parent="."]
+margin_left = 443.218
+margin_top = 518.436
+margin_right = 557.218
+margin_bottom = 567.436
+text = "SUBMIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Introduction" type="Control" parent="."]
+margin_right = 1026.0
+margin_bottom = 240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HidingRectangle" type="ColorRect" parent="Introduction"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.6, 14.92 )
+color = Color( 0.0470588, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Welcome" type="Label" parent="Introduction"]
+margin_left = 295.698
+margin_top = 19.0273
+margin_right = 898.698
+margin_bottom = 135.027
+rect_scale = Vector2( 1.73072, 2.34102 )
+text = "Welcome to Word Pairing game mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ready" type="Label" parent="Introduction"]
+margin_left = 400.426
+margin_top = 77.2985
+margin_right = 633.426
+margin_bottom = 91.2985
+text = "The questions will start shortly"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionLoadTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="LeftSide/LeftLabel1/CheckBox 0" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="LeftSide/LeftLabel2/CheckBox 1" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="LeftSide/LeftLabel3/CheckBox 2" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="LeftSide/LeftLabel4/CheckBox 3" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="RightSide/RightLabel1/CheckBox 0" to="." method="_on_CheckBox_pressed2"]
+[connection signal="pressed" from="RightSide/RightLabel2/CheckBox 1" to="." method="_on_CheckBox_pressed2"]
+[connection signal="pressed" from="RightSide/RightLabel3/CheckBox 2" to="." method="_on_CheckBox_pressed2"]
+[connection signal="pressed" from="RightSide/RightLabel4/CheckBox 3" to="." method="_on_CheckBox_pressed2"]
+[connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="timeout" from="QuestionLoadTimer" to="." method="_on_QuestionLoadTimer_timeout"]

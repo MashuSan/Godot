@@ -6,10 +6,15 @@ var answer2Text
 var answer3Text
 var answer4Text
 var answer = 0
+var time = 21
+var timeTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	timeTimer = get_node("RemainingTimeTimer")
+	_on_RemainingTimeTimer_timeout()
+	timeTimer.set_wait_time(1)
+	timeTimer.start()
 	
 func set_data(q, a1, a2, a3, a4):
 	questionText = q
@@ -17,7 +22,7 @@ func set_data(q, a1, a2, a3, a4):
 	answer2Text = a2
 	answer3Text = a3
 	answer4Text = a4
-	
+
 	load_data()
 
 func load_data():
@@ -43,6 +48,13 @@ func _on_Answer3_pressed():
 func _on_Answer4_pressed():
 	answer = 4
 
+
 func get_user_answer():
 	return answer
 
+
+func _on_RemainingTimeTimer_timeout():
+	if time == 0:
+		timeTimer.stop()
+	time -= 1
+	$RemainingTimeLabel.text = "Remaining time: " + str(time)

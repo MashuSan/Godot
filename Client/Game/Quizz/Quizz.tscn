@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game/Quizz/Quizz.gd" type="Script" id=1]
+[ext_resource path="res://Images/No.png" type="Texture" id=2]
+[ext_resource path="res://Images/Yes.png" type="Texture" id=3]
 
 [node name="Node" type="Control"]
 script = ExtResource( 1 )
@@ -57,6 +59,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NoTexture" type="TextureRect" parent="Game"]
+visible = false
+margin_left = 2.11902
+margin_top = -209.774
+margin_right = 1026.12
+margin_bottom = 814.226
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YesTexture" type="TextureRect" parent="Game"]
+visible = false
+margin_right = 1021.0
+margin_bottom = 600.0
+texture = ExtResource( 3 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="RemainingTime" type="Label" parent="Game"]
 margin_left = 21.7092
 margin_top = 20.7653
@@ -75,6 +99,9 @@ margin_top = 492.146
 margin_right = 550.477
 margin_bottom = 550.146
 text = "Next Question"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Score" type="Label" parent="Game"]
 margin_left = 876.812
@@ -95,6 +122,18 @@ margin_bottom = 299.671
 rect_scale = Vector2( 1.95691, 2.64 )
 text = "The right answer was :"
 
+[node name="ShowResults" type="Button" parent="Game"]
+visible = false
+margin_left = 445.445
+margin_top = 491.59
+margin_right = 550.445
+margin_bottom = 549.59
+text = "Show results"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="Introduction/WelcomeTimer" to="." method="_on_WelcomeTimer_timeout"]
 [connection signal="timeout" from="QuestionTimer" to="." method="_on_QuestionTimer_timeout"]
 [connection signal="pressed" from="Game/NextQuestion" to="." method="_on_NextQuestion_pressed"]
+[connection signal="pressed" from="Game/ShowResults" to="." method="_on_ShowResults_pressed"]

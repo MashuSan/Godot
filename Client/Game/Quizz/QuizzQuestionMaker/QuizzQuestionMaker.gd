@@ -22,15 +22,14 @@ func _on_Button_pressed():
 
 func _on_AddSetButton_pressed():
 	ServerManager.save_game_questions($AddSetText.text + ".xml", ServerManager.game_modes[0], questions)
-	reset_texts()
+	self.queue_free()
 
 
 func reset_texts():
 	question.text = ""
-	answers[0].text = ""
-	answers[1].text = ""
-	answers[2].text = ""
-	answers[3].text = ""
+	
+	for answer in answers:
+		answer.text = ""
 
 
 func _on_ExitButton_pressed():

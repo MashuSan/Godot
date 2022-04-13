@@ -1,6 +1,95 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/ScoreInfo.gd" type="Script" id=1]
+[ext_resource path="res://Images/kahoot.jpg" type="Texture" id=2]
+[ext_resource path="res://Images/third_place.png" type="Texture" id=3]
+[ext_resource path="res://Images/first_place.png" type="Texture" id=4]
+[ext_resource path="res://Images/second_place.png" type="Texture" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 639.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Winner" type="Label" parent="."]
+margin_left = 365.0
+margin_top = 76.0
+margin_right = 527.0
+margin_bottom = 122.0
+rect_scale = Vector2( 1.78095, 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Winner2" type="Label" parent="."]
+margin_left = 66.0
+margin_top = 184.0
+margin_right = 231.0
+margin_bottom = 216.0
+rect_scale = Vector2( 1.78095, 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Winner3" type="Label" parent="."]
+margin_left = 667.0
+margin_top = 254.0
+margin_right = 829.0
+margin_bottom = 294.0
+rect_scale = Vector2( 1.78095, 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 430.0
+margin_top = 502.0
+margin_right = 527.0
+margin_bottom = 523.0
+rect_scale = Vector2( 1.8, 3 )
+text = "GameRoom"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 444.364
+margin_top = 199.241
+margin_right = 594.364
+margin_bottom = 336.241
+rect_pivot_offset = Vector2( -1345.36, -518.211 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 140.955
+margin_top = 281.0
+margin_right = 280.955
+margin_bottom = 417.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+margin_left = 743.717
+margin_top = 352.825
+margin_right = 883.717
+margin_bottom = 488.825
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

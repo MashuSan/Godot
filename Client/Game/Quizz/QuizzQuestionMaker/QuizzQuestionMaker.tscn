@@ -37,6 +37,9 @@ margin_top = -18.2245
 margin_right = 33.1069
 margin_bottom = 5.7755
 rect_scale = Vector2( 1.76, 2.12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Questions" type="Label" parent="PanelQuestion"]
 margin_left = 252.437

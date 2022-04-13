@@ -1,6 +1,6 @@
 extends Node
 
-const SERVER_IP = "127.0.0.1"
+const SERVER_IP = "192.168.0.82"
 const SERVER_PORT = 3456
 
 onready var _start_button = get_node("Start_button")
