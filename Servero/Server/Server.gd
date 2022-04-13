@@ -1,6 +1,6 @@
 extends Node
 
-const SERVER_IP = "127.0.0.1"
+const SERVER_IP = "192.168.0.82" # "147.251.47.164"
 const SERVER_PORT = 3456
 const MAX_PLAYERS = 32
 var peer = NetworkedMultiplayerENet.new()
@@ -21,6 +21,7 @@ func start_server():
 		return
 	else:
 		LogWorker.PrintLog("Created the server\n")
+		LogWorker.PrintLog(str(IP.get_local_addresses()))
 		
 	
 	get_tree().set_network_peer(peer)
