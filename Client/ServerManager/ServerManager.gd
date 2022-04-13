@@ -3,12 +3,13 @@ extends Node
 signal updated_games
 signal all_ready
 
-# {game_id:[_game_id, _game_name, _max_players, {player_id:[_player_name, _player_id, _game_id, _is_host]}, mode]}
+# {game_id:[_game_id, _game_name, _max_players, {player_id:[_player_name, _player_id, _game_id, _is_host, _team]}, mode]}
 var _open_games = {}
 var _player_in_same_game_room_list = []
+var _player_in_same_team = {}
 var _players_ready = []
 
-var game_modes = {0: "Quizz"}
+var game_modes = {0: "Quizz", 1: "WordPairing", 2: "CodePuzzle", 3: "WordGuess"}
 var questions
 var files
 
@@ -20,11 +21,19 @@ remote func update_open_games(open_games):
 	print(_open_games)
 	emit_signal("updated_games")
 
+remote func update_open_game(game):
+	_open_games[game[0]] = game[game[0]]
+	emit_signal("updated_games")
+
+func update_player_team(player_id, game_id, team_name):
+	_open_games[game_id][3][player_id][4] = team_name
+	rpc_id(1, "update_player_team", player_id, game_id, team_name)
+
 func save_game_questions(set_name, game_mode, questions):
 	rpc_id(1, "save_game_questions", set_name, game_mode, questions)
 
 func get_game_questions(game_mode, file_name):
-	rpc_id(1, "send_game_questions", game_mode, file_name, get_tree().get_network_unique_id())
+	rpc_id(1, "send_game_questions", game_modes[game_mode], file_name, get_tree().get_network_unique_id())
 
 func update_game_mode_files(game_mode):
 	rpc_id(1, "get_game_mode_files", game_mode, get_tree().get_network_unique_id())
@@ -49,7 +58,7 @@ func create_game(game_information, host_player):
 	Player.set_host(true)
 	rpc_id(1, "add_game_to_game_list", host_player.get_player_id(), game_information, host_player.get_parsable_player())
 	yield(ServerManager, "updated_games")
-	update_game_mode_files(game_modes[0])
+	update_game_mode_files(game_modes[game_information[4]])
 	get_tree().change_scene("res://GameRoom/GameRoom.tscn")
 
 func join_game(game_id):
@@ -58,10 +67,11 @@ func join_game(game_id):
 	rpc_id(1, "join_open_game", game_id, Player.get_parsable_player())
 	get_tree().change_scene("res://GameRoom/GameRoom.tscn")
 
+
 func left_game():
 	rpc_id(1, "remove_player_from_open_game", Player.get_game_id(), Player.get_player_id())
-
 	send_open_games_request_to_server()
+
 
 func _on_Server_is_reachable_timeout():
 	print("Server is reachable.")

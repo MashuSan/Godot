@@ -15,6 +15,7 @@ func _input(ev):
 
 func connect_to_server():
 	Player.set_player_name($GUI/LineEdit.text)
+	Player.check_admin_code($GUI/LineEdit2.text)
 	get_tree().change_scene("res://Client.tscn")
 
 func _on_Exit_button_pressed():
